@@ -15,6 +15,12 @@ It is not a template and not a form. Each block is a decision with a required sh
 
 The boards are ordered, and so are the blocks inside them. Marketing cannot position before Product has decided value; Sales cannot qualify before Marketing has decided who it talks to; CS cannot define success before Product has defined it.
 
+## What a block produces
+
+Roughly five pages by default, `deep` on request for the blocks that carry the rest of the canvas. Every block has the same anatomy: the inputs it consumed, the developed body, the assumptions with the cheapest test that would kill each, what it constrains downstream by block code, the contradictions it detected with earlier blocks, a canonical extract for the state, a definitive north, and a single closing question or task.
+
+The register is specified too, and separately. A block that contains every required section and reads like a memorandum has failed, so `references/narrative-devices.md` codifies what the output must do: quote the buyer in their own words rather than characterizing their beliefs, track the internal question as it evolves across awareness stages, set the load-bearing claim apart from the prose, produce language as variants with the rejected ones and their reasons visible, and close on a decision rather than a summary.
+
 ## The dependency model
 
 Every block depends on everything before it. Loading everything before it is not possible, so dependency resolves at two levels.
@@ -22,6 +28,16 @@ Every block depends on everything before it. Loading everything before it is not
 Every completed block produces a **canonical extract** — five to ten lines carrying the decision, not the reasoning. All completed extracts stay available at all times. Each block additionally declares two to four **hard dependencies**, which are loaded in full. Nothing else is loaded.
 
 This is what makes it possible to jump straight to `M4` on an empty canvas. The skill resolves the missing hard dependencies by asking a handful of questions, records the answers as extracts marked provisional, generates the block, and notes the debt. When those blocks are later done properly, everything built on the provisionals is marked stale, with the specific change named.
+
+## Modes
+
+| Mode | What it does |
+|---|---|
+| `sequential` | `P1` → `C8`, one block at a time, coherence checkpoint at the end of each board |
+| `board` | One full board, resolving prior-board prerequisites first |
+| `block` | A single block, with provisional resolution of what is missing |
+| `audit` | Generates nothing. Takes a filled canvas and reports where it contradicts itself |
+| `revision` | Something changed. Computes what went stale and proposes the rework order |
 
 ## What it is not
 
@@ -58,7 +74,7 @@ Trigger it by describing what you are doing, not by naming the skill:
 >
 > Here's our filled canvas — tell me where it contradicts itself.
 
-The first two questions it asks are where the canvas should live and what it should cover. Everything else follows from the intake block.
+It opens with two questions: where the canvas should live — a file on disk in Claude Code, or a document you carry between sessions everywhere else — and what it should cover, which is the product as a whole unless you point it at a specific ICP or persona. Everything after that follows from the intake block.
 
 ## Structure
 
@@ -68,6 +84,7 @@ The first two questions it asks are where the canvas should live and what it sho
 ├── references/
 │   ├── dependency-graph.md           All 32 blocks: consumes, produces, hard dependencies
 │   ├── output-contract.md            Anatomy of a block, depth levels, banned vocabulary
+│   ├── narrative-devices.md          The register a block is written in
 │   ├── coherence-checks.md           Contradictions between blocks
 │   ├── state-format.md               Canvas state schema
 │   └── regimes.md                    Greenfield, extension, repositioning
@@ -95,7 +112,9 @@ The first two questions it asks are where the canvas should live and what it sho
 
 **The evidence bar depends on the regime.** A hypothesis is a legitimate answer for a product that does not exist and an evasion for one that has customers. The regime is set at intake and enforced per block.
 
-**Separate data from inference.** Every block labels which parts are the operator's, which are verified external data, and which are the model's reasoning. Confusing the three is how a canvas becomes flattery.
+**Register is not decoration.** How a block reads determines whether its decisions survive the week it was written. Specified in `references/narrative-devices.md` and enforced per block, not left to style.
+
+**Separate data from inference.** Every block distinguishes what the operator supplied, what is verified external data, and what is the model's reasoning. Confusing the three is how a canvas becomes flattery.
 
 **Language follows the operator.** The files are in English because they instruct the model. The skill answers in whatever language you are using.
 
