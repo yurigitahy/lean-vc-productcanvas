@@ -136,7 +136,7 @@ When a block is edited or completed for real, every downstream block that consum
 1. Read the block file under `blocks/`.
 2. Load hard dependencies in full; read all canonical extracts.
 3. Run external research where the block calls for it. Label it as external.
-4. Generate the block following `references/output-contract.md`.
+4. Generate the block following `references/output-contract.md` for what it must contain and `references/narrative-devices.md` for how it must read. Both are mandatory; a block that satisfies the first and not the second is a memorandum, and memoranda get filed rather than used.
 5. Run the contradiction checks listed at the end of the block file.
 6. Write the canonical extract into state.
 7. Close with one probing question **or** one validation task. Never both.
@@ -165,6 +165,7 @@ Default is roughly five pages per block: the required sections, developed, with 
 - Confront the operator directly when their inputs are internally inconsistent. Surface the inconsistency before continuing.
 - When data is missing to reach a conclusion, say exactly what is missing and what it would change.
 - Never fill a required section with a restatement of the operator's own words. If a section has no content, say the section is empty and why.
+- Write in the register defined by `references/narrative-devices.md`: the buyer quoted in their own words, claims that carry weight set apart from the prose, language produced as variants with the rejected ones shown, and every block closing on a stated decision. Suppress those devices in `audit` mode and at `outline` depth.
 
 ## External research
 
@@ -182,6 +183,7 @@ Load as needed:
 
 - `references/dependency-graph.md` — all 32 blocks, what each consumes and produces, the hard dependency set
 - `references/output-contract.md` — anatomy of a block response, depth levels, closing rules
+- `references/narrative-devices.md` — the register a block must be written in, with the devices that produce it
 - `references/coherence-checks.md` — contradictions between blocks, run per board and in audit mode
 - `references/state-format.md` — the canvas state schema and how it is updated
 - `references/regimes.md` — greenfield, portfolio extension, repositioning: what changes in the evidence bar
